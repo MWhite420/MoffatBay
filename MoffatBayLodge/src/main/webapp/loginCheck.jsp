@@ -34,7 +34,7 @@
         String lname = db.getLname();
         session.setAttribute("fname", fname);
         session.setAttribute("lname", lname);
-        response.sendRedirect("Index.jsp");
+        response.sendRedirect("profilePage.jsp");
           
         db.close();
         

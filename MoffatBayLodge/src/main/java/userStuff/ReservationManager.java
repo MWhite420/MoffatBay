@@ -212,6 +212,35 @@ public class ReservationManager {
 	   
    }
    
+   // Returns reservation status for confirmed reservations
+   public ResultSet confirmedReservations(int customerId) {
+	    String query = "SELECT r.*, s.suite_name FROM reservations r " +
+	                   "JOIN suites s ON r.suite_id = s.suite_id " +
+	                   "WHERE r.customer_id = ? AND r.status = 'confirmed'";
+	    try {
+	        PreparedStatement stmt = connection.prepareStatement(query);
+	        stmt.setInt(1, customerId);
+	        return stmt.executeQuery();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return null;
+	    }
+	}
+
+   public ResultSet completeReservations(int customerId) {
+	    String query = "SELECT r.*, s.suite_name FROM reservations r " +
+	                   "JOIN suites s ON r.suite_id = s.suite_id " +
+	                   "WHERE r.customer_id = ? AND r.status = 'complete'";
+	    try {
+	        PreparedStatement stmt = connection.prepareStatement(query);
+	        stmt.setInt(1, customerId);
+	        return stmt.executeQuery();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return null;
+	    }
+	}
+   
    //close
    public void close() {
        try {
