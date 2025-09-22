@@ -43,7 +43,6 @@
               <%
               out.print("Hello, " + session.getAttribute("fname") + "!");
               %>
-              <a href="profilePage.jsp">View Reservations</a>
               <a href="logoutPage.jsp">Logout</a>
               <%
           }else{

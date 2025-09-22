@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<%@ page import="userStuff.UserClass" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,12 +11,38 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Header -->
-   <header class="header-container">
+<%
+    String email = request.getParameter("email");
+    String password = request.getParameter("password");
+
+    // Uses DatabaseBean to connect to the database
+    UserClass db = new UserClass();
+    boolean isValid = db.loginCheck(email, password);
+    
+    
+
+    // Checks to see it the users email and password are valid
+    if (isValid) {
+        out.println("<h2>Login successful!</h2>");
+        session.setAttribute("userEmail", email);
+       
+        String fname = db.getFname();
+        String lname = db.getLname();
+        session.setAttribute("fname", fname);
+        session.setAttribute("lname", lname);
+        response.sendRedirect("Index.jsp");
+          
+        db.close();
+        
+    } else {
+    	
+    	%>
+    	<!-- header from other pages -->
+	     <header class="header-container">
     <div class="header-left">
       <img src="images/MoffatBayLogo3.png" alt="Moffat Bay Lodge Logo" class="logo-img">
     </div>
@@ -34,7 +60,7 @@
       </nav>
     </div>
 
-<div class="header-right">
+   <div class="header-right">
       <div class="auth-links">
       <% 
           if(session.getAttribute("fname") != null){
@@ -43,7 +69,6 @@
               <%
               out.print("Hello, " + session.getAttribute("fname") + "!");
               %>
-              <a href="profilePage.jsp">View Reservations</a>
               <a href="logoutPage.jsp">Logout</a>
               <%
           }else{
@@ -57,48 +82,14 @@
       </div>
     </div>
   </header>
-  
-  <h2>Welcome Back!</h2>
-  
-  <!-- Login Box -->
-<section class="register-container">
-  
-  
-  <form action="loginCheck.jsp" method="POST" class="login-form">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required> <br>
-
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-
-    <div class="login">
-      <button type="submit" class="btn primary">Login</button>
-       <button type="button" class="btn primary" onclick="window.location.href='resetRequest.jsp'">Reset Password</button>
-    </div>
-    
-  </form>
-
-  <div class="signup-section">
-    <p>Don't have an account? <br> No worries! Create an account here: </p>
-    <button type="button" class="btn primary" onclick="window.location.href='registration.jsp'">Sign Up</button>
-  </div>
-</section>
-
-
- 
-  <!-- Footer -->
- <footer>
-    <div class="footer-nav">
-      <a href="Index.jsp">Home</a>
-      <a href="#">FAQS</a>
-      <a href="about.jsp">About Us</a>
-      <a href="reservation.jsp">Book Now!</a>
-    </div>
-    <div class="footer-copy">
-      &copy;MoffatBay2025
-    </div>
-  </footer>
- 
-
+	  
+	  <div class = button-wrapper>
+        <h2>Login failed. Invalid email or password.</h2>
+       	<a href="loginPage.jsp" class="btn primary">Try again</a>
+       </div>
+       
+       <% 
+        db.close();
+    	}
+		%>
 </body>
-</html>

@@ -41,7 +41,6 @@
               <%
               out.print("Hello, " + session.getAttribute("fname") + "!");
               %>
-              <a href="profilePage.jsp">View Reservations</a>
               <a href="logoutPage.jsp">Logout</a>
               <%
           }else{
@@ -122,47 +121,6 @@
 	    </div>
 	  </section>
   	<% } %>
-  		
-  	  <section class="cta">
-	    <div class="cta-box">
-	     
-	        <img src="images/SalishSalmon.png" width="200" height="200" alt="Salish Salmon Logo" >
-	      
-	      <div class="cta-right">
-	      	<h2>Supporting Salish Salmon and Local Wildlife</h2>
-	        <p>At Moffat Bay Resort, we are proud to call the Salish Sea our home. We are not the only ones
-	         who depend on its pristine waters, so do the wild salmon, orcas, bald eagles, and countless other 
-	         species that make this place so special.
-	         <br>
-	         Wild Pacific salmon are the heartbeat of the Salish Sea ecosystem. They nourish marine life, 
-	         sustain Indigenous cultures, and support a way of life thats been thriving here for thousands of years. 
-	         Yet today, their populations are under threat due to habitat loss, warming waters, and human impact.</p>
-	       </div>
-	       <div class="cta-right">
-	         <h2>Our Commitment and How You Can Help</h2>
-	         <p>
-	           <ul>
-	         	<li>We partner with local conservation groups restoring salmon habitats.</li>
- 				<li>We use eco-friendly practices to reduce runoff and pollution.</li>
- 				<li>We do not support farmed salmon operations that harm wild populations.</li>
-			   </ul>
-			    <b>YOU CAN:</b>
-			    <ul>
- 				<li>Support local, sustainable seafood.</li>
- 				<li>no-wake zones and marine wildlife guidelines.</li>
-				<li>Learn about and share the story of the salmon.</li>
- 				<li>Join us in donating or volunteering with regional conservation efforts.</li>
- 				</ul>
- 				<b>Support and Donation Sites:</b>
- 				<ul>
- 					<li><a href="https://salishcenter.org/2025/05/01/saving-the-salish-sea-a-call-to-protect-what-cannot-be-replaced/">Salish Center</a></li>
- 					<li><a href="https://marinesurvivalproject.com/">Marine Survival</a></li>
- 					<li><a href="https://psf.ca/work/habitat/marine-research/">Marine Habitat and Research</a></li>
- 				</ul>
- 			</div>
-	      </div>
-	    </div>
-	  </section>
   
 
   <!-- Footer -->

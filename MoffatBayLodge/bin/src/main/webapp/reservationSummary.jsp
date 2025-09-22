@@ -48,7 +48,6 @@
               <%
               out.print("Hello, " + session.getAttribute("fname") + "!");
               %>
-              <a href="profilePage.jsp">View Reservations</a>
               <a href="logoutPage.jsp">Logout</a>
               <%
           }else{
@@ -125,12 +124,13 @@
         <th>Room Type:</th>
         <td><%= roomType %></td>
        </tr>
-         <tr>
+       <tr>
         <th>Length Of Stay:</th>
         <td><%= lengthOfStay %> nights </td>
        </tr>
-       <th>Total Price:</th>
-        <td>$<%= totalPrice %></td>
+       <tr>
+       	<th>Total Price:</th>
+       	<td>$<%= totalPrice %></td>
        </tr>
        
  		<%res.close();%>

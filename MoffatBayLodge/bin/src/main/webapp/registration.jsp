@@ -1,7 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +11,11 @@
 
   <!-- Style sheet -->
   <link rel="stylesheet" href="styles.css" />
-  <!-- Calendar Widget -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="header-container">
+   <header class="header-container">
     <div class="header-left">
       <img src="images/MoffatBayLogo3.png" alt="Moffat Bay Lodge Logo" class="logo-img">
     </div>
@@ -39,7 +33,7 @@
       </nav>
     </div>
 
-	<div class="header-right">
+    <div class="header-right">
       <div class="auth-links">
       <% 
           if(session.getAttribute("fname") != null){
@@ -48,7 +42,6 @@
               <%
               out.print("Hello, " + session.getAttribute("fname") + "!");
               %>
-              <a href="profilePage.jsp">View Reservations</a>
               <a href="logoutPage.jsp">Logout</a>
               <%
           }else{
@@ -62,42 +55,51 @@
       </div>
     </div>
   </header>
-	
-	<section class = "register-container">
-	
-	<% 
-		String confirm = (String)request.getAttribute("confirmed");
-		if (confirm.equals("submitted")){
-			%>
-			<h2>Reservation submitted successfully</h2>
-			<div class = button-wrapper>
-			<a href= "Index.jsp" class= "btn primary">Return to homepage</a>
-			<a href= "profilePage.jsp" class= "btn primary">View all reservations</a>
+  
+    <h2>Create Your Account</h2>
+    
+	<section class="register-container">	
+    	<!-- Registration Form -->
+    	<form action="Register" method="post">
+        	<div class="form-row name-fields">
+           	 <label>Name:</label>
+           	 <input type="text" name="firstName" placeholder="First" required>
+           	 <input type="text" name="lastName" placeholder="Last" required>
+           	 <br>
+            	<label>Email:</label>
+            	<input type="email" name="email" placeholder="user@example.com" required>
+            	<br>
+            	<label>Phone:</label>
+            	<input type="text" name="phone" placeholder="###-###-####">
+        	</div>
+
+        	<div class="form-row">
+            	<label>Password:</label>
+            	<input type="password" name="password" placeholder="*******" required>
+        	</div>
+
+        	<div class="form-row">
+            	<label>Confirm Password:</label>
+            	<input type="password" name="confirmPassword" placeholder="*******" required>
+        	</div>
+
+        	<div class="checkbox-row">
+            	<input type="checkbox" name="emailUpdates">
+            	I allow Moffat Bay to email me about reservation updates or any concerns.
+        	</div>
+
+        	<div class="checkbox-row">
+            	<input type="checkbox" name="smsUpdates">
+            	I allow Moffat Bay to text me about reservation updates or any concerns.
+        	</div>
+
+        	<div class="button-wrapper">
+    		 <button type="submit" class="btn primary">Create Account</button>
 			</div>
-			<% 
-		}else if(confirm.equals("unavailableRoom")){
-			%>
-			<h2>Selected room is unavailable for selected dates</h2>
-			<div class = button-wrapper>
-			<a href= "reservation.jsp" class= "btn primary">Try again</a>
-			<a href = "index.jsp" class= "btn primary">Return to homepage</a>
-			</div>
-			
-			<%
-		}else{
-			%>
-			<div class = button-wrapper>
-			<h2>Something went wrong on our end. Please try again later</h2>
-			<a href= "reservation.jsp" class= "btn primary">Try again</a>
-			<a href = "index.jsp" class= "btn primary">Return to homepage</a>
-			</div>
-			<% 
-		}
-	
-	%>
-	
-	</section>
-	
+    	</form>	
+    </section>
+    
+      <!-- Footer -->
  <footer>
     <div class="footer-nav">
       <a href="Index.jsp">Home</a>
