@@ -65,7 +65,9 @@
   </header>
   
  <!-- Suites Section -->
+
  <h1>Suites Selection</h1>
+<div class="suites-container">
 <div class="suites">
  <h2>Bay View Suite</h2>
  <p><b>Price: $315/night</b></p>
@@ -126,6 +128,7 @@
   <p>Indulge in ultimate relaxation with an in-room hot tub or soaking tub, complemented by access to spa services like massage and sauna. Featuring premium linens and luxurious finishing touches, 
   this suite offers a sophisticated retreat for those seeking comfort and pampering.</p>
   </div>
+</div>
 </div>
 
 <!-- Reservation Reminder -->

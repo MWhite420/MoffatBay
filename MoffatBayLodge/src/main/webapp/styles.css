@@ -367,8 +367,8 @@ footer {
 }
 
 .suiteimg {
-  width: 500px;
-  height: 300px;  
+  width: 300px;
+  height: 200px;  
   border: 1px solid #ccc;
   border-radius: 6px;
   margin: 0;
@@ -379,4 +379,21 @@ footer {
   gap: 20px;
   justify-content: center; 
 }
+.suites-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* space between cards */
+  margin: 20px;
+}
 
+@media (max-width: 900px) {
+  .suites-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .suites-container {
+    grid-template-columns: 1fr;
+  }
+}
