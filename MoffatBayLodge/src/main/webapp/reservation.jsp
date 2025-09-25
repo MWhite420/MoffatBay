@@ -87,9 +87,6 @@
 			<br>
 			<label for="checkout">Check-Out Date:</label>
 			<input type="date" name="checkout" id="checkout" required>
-
-		
-			
 			<br>
         	<label for="guests">Number of Guests:</label>
         	<input type="number" name="guests" id="guests" min="1" max= "4" required>

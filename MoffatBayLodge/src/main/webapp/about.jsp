@@ -26,7 +26,7 @@
       <nav class="main-nav">
         <ul>
           <li><a href="Index.jsp">Home</a></li>
-          <li><a href="#">Suites</a></li>
+          <li><a href="suites.jsp">Suites</a></li>
           <li><a href="#">Attractions</a></li>
           <li><a href="#">About us</a></li>
           <li><a href="reservation.jsp">Book a room!</a></li>
@@ -100,7 +100,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-nav">
-     <a href="index.jsp">Home</a>
+     <a href="Index.jsp">Home</a>
       <a href="#">FAQS</a>
       <a href="about.jsp">About Us</a>
       <a href="#">Book Now!</a>
