@@ -12,17 +12,11 @@
 
   <!-- Stylesheet -->
    <link rel="stylesheet" href="styles.css" />
-   <style>
-   	h1 {
-   	text-align: center;
-   	text-decoration: underline;
-   	}
-   </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="header-container">
+   <header class="header-container">
     <div class="header-left">
       <img src="images/MoffatBayLogo3.png" alt="Moffat Bay Lodge Logo" class="logo-img">
     </div>
@@ -33,14 +27,14 @@
         <ul>
           <li><a href="Index.jsp">Home</a></li>
           <li><a href="suites.jsp">Suites</a></li>
-          <li><a href="#">Attractions</a></li>
+          <li><a href="attractions.jsp">Attractions</a></li>
           <li><a href="about.jsp">About us</a></li>
           <li><a href="reservation.jsp">Book a room!</a></li>
         </ul>
       </nav>
     </div>
 
-   <div class="header-right">
+<div class="header-right">
       <div class="auth-links">
       <% 
           if(session.getAttribute("fname") != null){
@@ -66,7 +60,7 @@
   
  <!-- Suites Section -->
 
- <h1>Suites Selection</h1>
+<h1 class="suites-title">Suites Selection</h1>
 <div class="suites-container">
 <div class="suites">
  <h2>Bay View Suite</h2>

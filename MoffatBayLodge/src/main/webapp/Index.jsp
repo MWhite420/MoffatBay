@@ -25,7 +25,7 @@
         <ul>
           <li><a href="Index.jsp">Home</a></li>
           <li><a href="suites.jsp">Suites</a></li>
-          <li><a href="#">Attractions</a></li>
+          <li><a href="attractions.jsp">Attractions</a></li>
           <li><a href="about.jsp">About us</a></li>
           <li><a href="reservation.jsp">Book a room!</a></li>
         </ul>
