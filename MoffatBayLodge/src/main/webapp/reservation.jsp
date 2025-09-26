@@ -28,8 +28,8 @@
       <nav class="main-nav">
         <ul>
           <li><a href="Index.jsp">Home</a></li>
-          <li><a href="#">Suites</a></li>
-          <li><a href="#">Attractions</a></li>
+          <li><a href="suites.jsp">Suites</a></li>
+          <li><a href="attractions.jsp">Attractions</a></li>
           <li><a href="about.jsp">About us</a></li>
           <li><a href="reservation.jsp">Book a room!</a></li>
         </ul>
@@ -87,9 +87,6 @@
 			<br>
 			<label for="checkout">Check-Out Date:</label>
 			<input type="date" name="checkout" id="checkout" required>
-
-		
-			
 			<br>
         	<label for="guests">Number of Guests:</label>
         	<input type="number" name="guests" id="guests" min="1" max= "4" required>
