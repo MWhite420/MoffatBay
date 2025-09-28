@@ -62,16 +62,17 @@
 <h1 class="attractions-title">Local Attractions</h1>
 <div class="attractions-container">
 
-  <div class="attraction">
-    <h2>Fish Watching Tours</h2>
+  <div class="attractions">
+    <h2>Whale Watching Tours</h2>
     <div class="attraction-content">
-      <img src="images/fishWatching.png" alt="Fish Watching" class="attraction-img">
-      <p>Experience a guided tour with our fish watching experts. It has all the thrills of whale 
-        watching, but smaller! Guaranteed to excite even the most boring of individuals.</p>
+      <img src="images/whaleWatching.png" alt="Whale Watching" class="attraction-img">
+      <p>Experience a guided tour with our whale watching experts. It has all the thrills of 
+        fish watching, but bigger! Guaranteed to impress even the most easily distracted 
+        individuals.</p>
     </div>
   </div>
 
-  <div class="attraction">
+  <div class="attractions">
     <h2>Moffat Bay Hiking Trails</h2>
     <div class="attraction-content">
       <img src="images/hikingTrails.png" alt="Hiking Trails" class="attraction-img">
@@ -82,7 +83,7 @@
     </div>
   </div>
 
-  <div class="attraction">
+  <div class="attractions">
     <h2>Kayak Adventures</h2>
     <div class="attraction-content">
       <img src="images/kayaking.png" alt="Kayaking" class="attraction-img">
@@ -94,7 +95,7 @@
     </div>
   </div>
 
-  <div class="attraction">
+  <div class="attractions">
     <h2>Moffat Bay's Haunted Lighthouse</h2>
     <div class="attraction-content">
       <img src="images/lighthouse.png" alt="Haunted Lake Lighthouse" class="attraction-img">
@@ -105,7 +106,7 @@
     </div>
   </div>
 
-  <div class="attraction">
+  <div class="attractions">
     <h2>Local Artisan Market</h2>
     <div class="attraction-content">
       <img src="images/artisanMarket.png" alt="Artisan Market" class="attraction-img">
@@ -114,6 +115,16 @@
         everything you didn't know you needed. Perfect for souvenir hunters, casual browsers, 
         and anyone who enjoys pretending they understand the difference between "rustic" and 
         "vintage."</p>
+    </div>
+  </div>
+
+  <div class="attractions">
+    <h2>Scuba Diving</h2>
+    <div class="attraction-content">
+      <img src="images/scubaDiving.png" alt="Scuba Diving" class="attraction-img">
+      <p>Plunge into lake scuba diving: murky, mysterious, and loaded with unforeseen consequences. 
+        Moffat Bay Lake is where nature meets neglect. Spot native wildlife, mysterious jars
+        and if you're lucky, maybe a moment of relaxation and clarity in a submerged lawn chair.</p>
     </div>
   </div>
 
