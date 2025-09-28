@@ -15,7 +15,7 @@
 <body>
 
   <!-- Header -->
-   <header class="header-container">
+  <header class="header-container">
     <div class="header-left">
       <img src="images/MoffatBayLogo3.png" alt="Moffat Bay Lodge Logo" class="logo-img">
     </div>
@@ -37,71 +37,98 @@
       <div class="auth-links">
       <% 
           if(session.getAttribute("fname") != null){
-              %>
-              <img src="images/profileicon.png" alt="Profile Icon" class="profile-icon">
-              <%
-              out.print("Hello, " + session.getAttribute("fname") + "!");
-              %>
-              <a href="profilePage.jsp">View Reservations</a>
-              <a href="logoutPage.jsp">Logout</a>
-              <%
-          }else{
-              %>
-            <img src="images/profileicon.png" alt="Profile Icon" class="profile-icon">
-            <a href="loginPage.jsp">Login</a>
-            <a href="registration.jsp">Sign Up</a>
-            <%
-              }
-            %>
+      %>
+          <img src="images/profileicon.png" alt="Profile Icon" class="profile-icon">
+          Hello, <%= session.getAttribute("fname") %>!
+          <a href="profilePage.jsp">View Reservations</a>
+          <a href="logoutPage.jsp">Logout</a>
+      <%  } else { %>
+          <img src="images/profileicon.png" alt="Profile Icon" class="profile-icon">
+          <a href="loginPage.jsp">Login</a>
+          <a href="registration.jsp">Sign Up</a>
+      <% } %>
       </div>
     </div>
   </header>
   
-    <h2>Create Your Account</h2>
+  <h2>Create Your Account</h2>
+
+  <!-- Display error messages from servlet -->
+  <%
+    String errorMessage = (String) request.getAttribute("errorMessage");
+    if (errorMessage != null) {
+  %>
+    <div class="error-message" style="color:red; font-weight:bold;">
+      <%= errorMessage %>
+    </div>
+  <% } %>
+
+  <section class="register-container">	
+    <!-- Registration Form -->
+    <form action="Register" method="post">
+      <div class="form-row name-fields">
+        <label>Name:</label>
+        <input type="text" name="firstName" placeholder="First" required>
+        <input type="text" name="lastName" placeholder="Last" required>
+        <br>
+
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="user@example.com" required>
+        <br>
+
+        <label>Phone:</label>
+        <input type="text" name="phone" placeholder="###-###-####">
+        <br>
+
+        <label>Street Address:</label>
+        <input type="text" name="street" placeholder="Street" required>
+        <br>
+
+        <label>City:</label>
+        <input type="text" name="city" required>
+        <br>
+
+        <label>State:</label>
+        <input type="text" name="state" required>
+        <br>
+
+        <label>Zip Code:</label>
+        <input type="text" name="postal" placeholder="Postal" required>
+        <br>
+
+        <label>Country:</label>
+        <input type="text" name="country" placeholder="USA" required>
+        <br>
+      </div>
+
+      <div class="form-row">
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="*******" required>
+      </div>
+
+      <div class="form-row">
+        <label>Confirm Password:</label>
+        <input type="password" name="confirmPassword" placeholder="*******" required>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" name="emailUpdates">
+        I allow Moffat Bay to email me about reservation updates or any concerns.
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" name="smsUpdates">
+        I allow Moffat Bay to text me about reservation updates or any concerns.
+      </div>
+
+      <div class="button-wrapper">
+        <button type="submit" class="btn primary">Create Account</button>
+      </div>
+    </form>	
+  </section>
     
-	<section class="register-container">	
-    	<!-- Registration Form -->
-    	<form action="Register" method="post">
-        	<div class="form-row name-fields">
-           	 <label>Name:</label>
-           	 <input type="text" name="firstName" placeholder="First" required>
-           	 <input type="text" name="lastName" placeholder="Last" required>
-           	 <br>
-            	<label>Email:</label>
-            	<input type="email" name="email" placeholder="user@example.com" required>
-            	<br>
-            	<label>Phone:</label>
-            	<input type="text" name="phone" placeholder="###-###-####">
-        	</div>
-
-        	<div class="form-row">
-            	<label>Password:</label>
-            	<input type="password" name="password" placeholder="*******" required>
-        	</div>
-
-        	<div class="form-row">
-            	<label>Confirm Password:</label>
-            	<input type="password" name="confirmPassword" placeholder="*******" required>
-        	</div>
-
-        	<div class="checkbox-row">
-            	<input type="checkbox" name="emailUpdates">
-            	I allow Moffat Bay to email me about reservation updates or any concerns.
-        	</div>
-
-        	<div class="checkbox-row">
-            	<input type="checkbox" name="smsUpdates">
-            	I allow Moffat Bay to text me about reservation updates or any concerns.
-        	</div>
-
-        	<div class="button-wrapper">
-    		 <button type="submit" class="btn primary">Create Account</button>
-			</div>
-    	</form>	
-    </section>
-    
-      <!-- Footer -->
- <footer>
+  <!-- Footer -->
+  <footer>
     <div class="footer-nav">
       <a href="Index.jsp">Home</a>
       <a href="#">FAQS</a>

@@ -23,6 +23,11 @@ public class UserClass {
     private String lname;
     private String email;
     private String phone;
+    private String street;
+    private String city;
+    private String state;
+    private String postal;
+    private String country;
     private String password;
     private int customerId;
 
@@ -66,6 +71,46 @@ public class UserClass {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+    
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+    
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+    
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+    
+    public String getPostal() {
+        return postal;
+    }
+
+    public void setPostal(String postal) {
+        this.postal = postal;
+    }
+    
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getPassword() {
@@ -122,7 +167,7 @@ public class UserClass {
         System.out.println("Attempting to save user to database...");
         boolean success = false;
 
-        String insertCustomerSQL = "INSERT INTO Customers (first_name, last_name, email, phone) VALUES (?, ?, ?, ?)";
+        String insertCustomerSQL = "INSERT INTO Customers (first_name, last_name, email, phone, street_address, city, state, postal_code, country) VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?)";
         String insertLoginSQL = "INSERT INTO CustomerLogin (customer_id, email, password_hash) VALUES (?, ?, ?)";
 
         try {
@@ -134,6 +179,11 @@ public class UserClass {
                 stmtCustomer.setString(2, lname);
                 stmtCustomer.setString(3, email);
                 stmtCustomer.setString(4, phone);
+                stmtCustomer.setString(5, street);
+                stmtCustomer.setString(6, city);
+                stmtCustomer.setString(7, state);
+                stmtCustomer.setString(8, postal);
+                stmtCustomer.setString(9, country);
 
                 int rowsInserted = stmtCustomer.executeUpdate();
 
@@ -199,3 +249,4 @@ public class UserClass {
         }
     }
 }
+
